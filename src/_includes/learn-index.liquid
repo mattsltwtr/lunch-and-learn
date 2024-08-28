@@ -1,0 +1,10 @@
+<h2>Sessions</h2>
+<ul class="links">
+{% for post in collections.learn %}
+    {% assign default_title = post.inputPath | split: '/' | last | replace: "-",
+    " " | remove: ".md" | capitalize%}
+    <li>
+        <a href="{{ post.url }}">{{ post.title | default: default_title }}</a>
+    </li>
+{% endfor %}
+</ul>

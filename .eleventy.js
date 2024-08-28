@@ -27,9 +27,9 @@ module.exports = (config) => {
     });
 
     return {
-        markdownTemplateEngine: "njk",
-        dataTemplateEngine: "njk",
-        htmlTemplateEngine: "njk",
+        markdownTemplateEngine: "liquid",
+        dataTemplateEngine: "liquid",
+        htmlTemplateEngine: "liquid",
 
         dir: {
             input: "src",

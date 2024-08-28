@@ -1,0 +1,31 @@
+<!doctype html>
+<head>
+  <link rel="stylesheet" href="{{ '../../assets/reveal/reveal.css' | url }}" />
+  <link rel="stylesheet" href="{{ '../../assets/reveal/theme/black.css' | url }}" />
+    <title>Page title</title>
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+        {% assign slides = content | split: '<hr>' %}
+
+        {%- for slide in slides -%}
+            <section>{{ slide }}</section>
+        {%- endfor -%}
+    </div>
+  </div>
+
+  <script src="{{ '../../assets/reveal/reveal.js' | url }}"></script>
+  <script src="{{ '../../assets/reveal/plugin/highlight/highlight.js' | url }}"></script>
+  <script src="{{ '../../assets/reveal/plugin/notes/notes.js' | url }}"></script>
+  <script>
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+      slideNumber: false,
+      plugins: [ RevealNotes, RevealHighlight ]
+    });
+  </script>
+</body>
