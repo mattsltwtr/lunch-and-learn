@@ -85,7 +85,11 @@
         {% assign slides = content | split: '<hr>' %}
 
         {%- for slide in slides -%}
-            <section>{{ slide }}</section>
+            {% if slide contains '<section' %}
+                {{ slide }}
+            {% else %}
+                <section>{{ slide }}</section>
+            {% endif %}
         {%- endfor -%}
     </div>
   </div>
